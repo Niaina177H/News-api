@@ -14,26 +14,7 @@ export default function Home() {
     threshold: 0.7, 
     triggerOnce: false,
   }); 
-  const div = useRef(null);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const elem = div.current;
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        elem.style.top = "0";
-        elem.nextElementSibling.style.paddingTop = '70px'
-        elem.nextElementSibling.style.transition = '.5s';
-      } else {
-        elem.style.top = "-70px";
-        elem.nextElementSibling.style.paddingTop = '10px'
-        elem.nextElementSibling.style.transition = '.5s';
-      }
-      prevScrollpos = currentScrollPos;
-    } 
-  }, []);
 
   useEffect(() => {
     const get = async () => {
@@ -59,10 +40,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="mx-auto backdrop-blur text-white/90" id="navbar" ref={div}>
+      <div className="mx-auto backdrop-blur text-white/90">
         <Headers />
       </div>
-    <div style={{paddingTop: '70px'}}>
       <div className="grid xl:grid-cols-2 xs:grid-cols-1 xl:gap-5 xs:gap-2 px-4 pb-2 w-full">
         {
           data.length ?  
@@ -79,7 +59,6 @@ export default function Home() {
       <div className={`w-full h-[70px] flex items-center justify-center`} ref={ref}>
         <Spin size="large" />
       </div>
-    </div>
     </>
   );
 }

@@ -5,7 +5,3 @@
 body{
   @apply min-h-screen xs:w-[360px] xs:overflow-x-auto sm:overflow-x-hidden sm:w-full;
 }
-#navbar{
-  @apply fixed top-0 w-full;
-  transition: top 0.4s;
-}
