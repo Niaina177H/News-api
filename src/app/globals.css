@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply min-h-screen xs:w-[360px] xs:overflow-x-auto sm:overflow-x-hidden sm:w-full;
+}

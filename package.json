@@ -1,0 +1,23 @@
+{
+  "name": "news-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "antd": "^5.21.2",
+    "next": "^14.2.14",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.13.1"
+  },
+  "devDependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
