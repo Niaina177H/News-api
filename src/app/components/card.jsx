@@ -22,6 +22,6 @@ export function CardArticle({information}){
             <h2 className="font-extrabold md:text-xl xs:text-sm xs:text-ellipsis sm:text-base py-2 opacity-[0.8]">{information.title}</h2>
             <p className="md:text-lg xs:text-xs sm:text-sm font-semibold opacity-[0.9]">{information.content}</p>
         </div>
-        { information.author ? <a href={information.url}  className="active:text-white hover:text-white text-white/90 bg-black/10 mt-1 max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap px-1 rounded-sm absolute bottom-0 right-10"><i>{information.author}</i></a> : <></> }
+        { information.author ? <a href={information.url}  className="active:text-white rounded-sm rounded-t-lg hover:text-white text-blue-500 bg-black/15 mt-1 max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap px-1 absolute bottom-0 right-10"><i>{information.author}</i></a> : <></> }
     </Card>
 }

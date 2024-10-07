@@ -11,10 +11,29 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [ref, inView] = useInView({
-    threshold: 0.5, 
+    threshold: 0.7, 
     triggerOnce: false,
   }); 
+  const div = useRef(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const elem = div.current;
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        elem.style.top = "0";
+        elem.nextElementSibling.style.paddingTop = '70px'
+        elem.nextElementSibling.style.transition = '.5s';
+      } else {
+        elem.style.top = "-70px";
+        elem.nextElementSibling.style.paddingTop = '10px'
+        elem.nextElementSibling.style.transition = '.5s';
+      }
+      prevScrollpos = currentScrollPos;
+    } 
+  }, []);
 
   useEffect(() => {
     const get = async () => {
@@ -40,10 +59,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="mx-auto backdrop-blur text-white/90">
+      <div className="mx-auto backdrop-blur text-white/90" id="navbar" ref={div}>
         <Headers />
       </div>
-      <div className="grid xl:grid-cols-2 xs:grid-cols-1 xl:gap-5 xs:gap-2 px-4 py-2 w-fit">
+    <div style={{paddingTop: '70px'}}>
+      <div className="grid xl:grid-cols-2 xs:grid-cols-1 xl:gap-5 xs:gap-2 px-4 pb-2 w-full">
         {
           data.length ?  
           data.map((item, index) => {
@@ -56,9 +76,10 @@ export default function Home() {
           <></>
         }
       </div>
-      <div className={`w-full h-[100px] flex items-center justify-center`} ref={ref}>
+      <div className={`w-full h-[70px] flex items-center justify-center`} ref={ref}>
         <Spin size="large" />
       </div>
+    </div>
     </>
   );
 }
