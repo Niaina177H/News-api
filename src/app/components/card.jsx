@@ -1,20 +1,7 @@
 import { Button, Image, Tag } from "antd";
 import Card from "antd/es/card/Card";
 
-
-const infos = {
-    articles: [
-        {
-            author: "naiain",
-            title: "Fivarotane mofo a madagascar fianrantsoa",
-            description: "mofo gasy",
-            url: "",
-            urlToImage: 'https://',
-            publishedAt: "",
-            content: "lorem impasuf;kand;fland;kfna ;akdnfaf",
-        }
-    ]
-}
+//comments for another commit
 export function CardArticle({information}){
     return <Card className="bg-white/25 my-2 shadow-lg cursor-default flex flex-col" styles={{body: {padding: '8px 8px 24px 8px'}}}>
         <Image src={information.urlToImage} alt={information.description} className="object-contain rounded-2xl mx-auto"/>

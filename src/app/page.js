@@ -6,6 +6,8 @@ import { CardArticle } from "./components/card";
 import { Button, Input, Spin } from "antd";
 import { useInView } from "react-intersection-observer";
 
+
+//comments for another commit
 export default function Home() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);

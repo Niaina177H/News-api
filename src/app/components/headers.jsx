@@ -1,7 +1,6 @@
 import { GithubFilled } from "@ant-design/icons"
-import { Button } from "antd"
 import Link from "next/link"
-import { useEffect } from "react"
+
 
 export function Headers(){
     return <div
