@@ -88,7 +88,7 @@ export default function Home() {
               setPage(0);
               setData([]);
             }
-          }} placeholder="search form everything ..."/>
+          }} placeholder="search for everything ..."/>
           <Button type="primary" color="primary" className="text-sm min-h-full font-bold text-white"
             onClick={async () => {
               if (q){
